@@ -1,3 +1,7 @@
+//    Date : 2019-03-12
+//  Auther : Rahul Sharma
+// Problem : http://codeforces.com/contest/344/problem/A
+
 #include <algorithm>
 #include <iostream>
 #include <string>

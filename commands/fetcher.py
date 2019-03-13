@@ -6,8 +6,9 @@ import os
 import sys
 import shutil
 import requests
-from bs4 import BeautifulSoup
+from datetime import datetime
 from urllib.parse import urlsplit
+from bs4 import BeautifulSoup
 
 
 def main():
@@ -42,7 +43,10 @@ def main():
         if os.path.isfile(filepath) and filename[0] != '.':
             dstpath = os.path.join(dir_name, filename)
             if not os.path.isfile(dstpath):
-                shutil.copyfile(filepath, dstpath)
+                if 'main' in filename.lower():
+                    _create_copy(filepath, dstpath, url)
+                else:
+                    shutil.copyfile(filepath, dstpath)
                 print(filename, 'created')
             else:
                 print(filename, 'already exist')
@@ -65,6 +69,15 @@ def _populate_tests(url, dir_name):
         with open(os.path.join(dir_name, 'test_{}.{}'.format(count, dtype)), 'w') as f:
             f.write(div.find('pre').get_text('\n'))
     return count
+
+
+def _create_copy(src, dst, url):
+    with open(src, 'r', encoding='utf-8') as in_file:
+        text = in_file.read()
+        text = text.replace('<<<date_now>>>', str(datetime.date(datetime.now())))
+        text = text.replace('<<<src_url>>>', url)
+        with open(dst, 'w', encoding='utf-8') as out_file:
+            out_file.write(text)
 
 
 if __name__ == '__main__':

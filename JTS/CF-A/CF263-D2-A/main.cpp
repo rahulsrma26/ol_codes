@@ -1,3 +1,7 @@
+//    Date : 2019-03-12
+//  Auther : Rahul Sharma
+// Problem : http://codeforces.com/contest/263/problem/A
+
 #include <iostream>
 #include <cmath>
 
