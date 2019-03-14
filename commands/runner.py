@@ -68,7 +68,7 @@ def main():
         if out_text is None:
             print(test, 'RUNTIME ERROR')
         else:
-            gt_text = _read_txt(test + '.output').strip()
+            gt_text = _read_txt(test + '.output')
             status = 'FAILED'
             if gt_text is None:
                 status = 'RUN'
