@@ -90,7 +90,7 @@ def _read_txt(filepath):
     if not os.path.isfile(filepath):
         return None
     with open(filepath, 'r') as f:
-        return f.read()
+        return '\n'.join([l.strip() for l in f])
 
 
 if __name__ == '__main__':
