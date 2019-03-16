@@ -1,5 +1,6 @@
 from urllib.parse import urlsplit
 from .code_force import CodeForce
+from .spoj import SPOJ
 
 
 class FetcherFactory:
@@ -16,3 +17,4 @@ class FetcherFactory:
 
 factory = FetcherFactory()
 factory.register('codeforces.com', CodeForce)
+factory.register('www.spoj.com', SPOJ)
