@@ -1,5 +1,5 @@
 //    Date : 2019-03-15
-//  Auther : Rahul Sharma
+//  Author : Rahul Sharma
 // Problem : https://www.spoj.com/problems/EASYMATH/
 
 #include <algorithm>

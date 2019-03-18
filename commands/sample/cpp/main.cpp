@@ -1,5 +1,5 @@
 //    Date : <<<date_now>>>
-//  Auther : Rahul Sharma
+//  Author : Rahul Sharma
 // Problem : <<<src_url>>>
 
 #include <algorithm>

@@ -1,5 +1,5 @@
 //    Date : 2019-03-15
-//  Auther : Rahul Sharma
+//  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/282/problem/A
 
 #include <algorithm>
