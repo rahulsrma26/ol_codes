@@ -29,7 +29,7 @@ First change the syntax highlight settings to c++17 or higher
 
 For code-runner, edit settings.json file in '.vscode' folder.
 
-<img src="docs/img/vscode_settings_json.png" alt="vscode_settings_json" height="200em"/>
+<img src="docs/img/vscode_settings_json.png" alt="vscode_settings_json" height="220em"/>
 
 Append these settings into your workspace settings.
 
