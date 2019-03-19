@@ -2,10 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/287/problem/B
 
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
 using num = long long;
 

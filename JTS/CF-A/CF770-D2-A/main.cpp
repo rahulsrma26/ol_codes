@@ -2,10 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/770/problem/A
 
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
 int main() {
     using namespace std;
@@ -16,7 +13,7 @@ int main() {
     int n, k;
     cin >> n >> k;
 
-    for(int i=0; i<n; i++)
-        cout << (char)('a' + i%k);
+    for (int i = 0; i < n; i++)
+        cout << (char)('a' + i % k);
     cout << '\n';
 }

@@ -2,10 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/216/problem/A
 
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
 struct vertex {
     int l, r;

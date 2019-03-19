@@ -2,10 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/443/problem/A
 
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <numeric>
+#include <bits/stdc++.h>
 
 int main() {
     using namespace std;

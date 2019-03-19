@@ -2,10 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : <<<src_url>>>
 
-#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
 int main() {
     using namespace std;

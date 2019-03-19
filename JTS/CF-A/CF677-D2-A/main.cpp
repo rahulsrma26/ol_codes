@@ -2,7 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/677/problem/A
 
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 

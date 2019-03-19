@@ -2,9 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/381/problem/A
 
-#include <algorithm>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 int main() {
     using namespace std;

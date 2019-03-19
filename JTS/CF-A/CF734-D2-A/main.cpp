@@ -2,8 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/734/problem/A
 
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -15,8 +14,7 @@ int main() {
     cin >> n;
 
     string s;
-    cin.ignore();
-    getline(cin, s);
+    cin >> s;
 
     int a[4] = {};
     for (char c : s)

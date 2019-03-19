@@ -2,9 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/127/problem/A
 
-#include <cmath>
-#include <iomanip>
-#include <iostream>
+#include <bits/stdc++.h>
 
 constexpr double sqr(int x) { return x * x; }
 
