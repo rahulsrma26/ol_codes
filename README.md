@@ -39,6 +39,7 @@ Append these settings into your workspace settings.
         "cpp": "cd $dir && g++ $fileName -o bin/$fileNameWithoutExt -std=c++17 -O2 -Wall && ./bin/$fileNameWithoutExt"
     },
     "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true,
     "code-runner.customCommand": "python $workspaceRoot/commands/runner.py main.cpp -std=c++17 -O2 -Wall"
 }
