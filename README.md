@@ -35,16 +35,20 @@ Append these settings into your workspace settings.
 
 ```json
 {
-    "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ $fileName -o bin/$fileNameWithoutExt -std=c++17 -O2 -Wall && ./bin/$fileNameWithoutExt"
-    },
     "code-runner.fileDirectoryAsCwd": true,
     "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true,
-    "code-runner.customCommand": "python $workspaceRoot/commands/runner.py main.cpp -std=c++17 -O2 -Wall"
+    "code-runner.customCommand": "python $workspaceRoot/commands/runner.py $fileName $workspaceRoot/library",
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -I$workspaceRoot/library -std=c++17 -O2 -Wall -o bin/$fileNameWithoutExt $fileName && ./bin/$fileNameWithoutExt"
+    }
 }
 ```
+Now to run a file just open it and press
+<kbd>control</kbd>+<kbd>option</kbd>+<kbd>k</kbd> (on mac)
+or <kbd>control</kbd>+<kbd>alt</kbd>+<kbd>k</kbd> (on pc).
 
+---
 
 Using code fetcher script
 -------------------------

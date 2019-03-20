@@ -5,44 +5,19 @@ from __future__ import print_function
 import os
 import sys
 from glob import glob
-import subprocess
 
-
-def _cpp_compile(srcpath, outpath):
-    cmd = ['g++', '-o', outpath] + sys.argv[2:] + [srcpath]
-    print(' '.join(cmd))
-    subprocess.call(cmd)
-    return outpath
-
-
-FILE_MAPPING = {'.cpp': _cpp_compile}
+from runners import runner_factory as rf
 
 
 def main():
-    if len(sys.argv) < 2:
-        print('usage {} <filename> [compiler args excluding output]'.format(
+    if len(sys.argv) != 3:
+        print('usage {} <filename> <library-path>'.format(
             sys.argv[0]))
         return
 
-    bin_dir = os.path.join('.', 'bin')
-    if not os.path.isdir(bin_dir):
-        os.mkdir(bin_dir)
-
-    filename, ext = os.path.splitext(sys.argv[1])
-    binary = os.path.join(bin_dir, filename)
-    if os.name == 'nt':
-        binary = binary + '.exe'
-
-    if os.path.isfile(binary):
-        os.remove(binary)
-
-    if ext not in FILE_MAPPING:
-        print('unknown file type', ext)
-
-    compiler = FILE_MAPPING[ext]
-    binary = compiler(sys.argv[1], binary)
-
-    if not os.path.isfile(binary):
+    bin_dir = 'bin'
+    runner = rf.factory.get(sys.argv[1], bin_dir, sys.argv[2])
+    if not runner.compile():
         return
 
     test_files = glob('test*.input')
@@ -58,10 +33,7 @@ def main():
         if os.path.isfile(out_file):
             os.remove(out_file)
 
-        subprocess.run(
-            '{} < {} > {}'.format(binary, in_file, out_file),
-            shell=True,
-            check=True)
+        runner.run(f'< {in_file} > {out_file}')
 
         in_text = _read_txt(in_file)
         out_text = _read_txt(out_file).strip()
@@ -78,11 +50,11 @@ def main():
             if status != 'PASSED':
                 print('-' * line_length)
                 print(in_text)
+                print('-' * line_length)
+                print(out_text)
                 if status != 'RUN':
                     print('-' * line_length)
                     print(gt_text)
-                print('-' * line_length)
-                print(out_text)
         print('=' * line_length)
 
 
