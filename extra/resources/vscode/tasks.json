@@ -6,7 +6,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -g -std=c++17 -Wall tmp/main.cpp -o tmp/main",
+            "command": "g++ -g -std=c++17 -Wall -D LOCAL JTS/CF-B/CF680-D2-B/main.cpp -o tmp/main",
             "group":{
                 "kind": "build",
                 "isDefault": true

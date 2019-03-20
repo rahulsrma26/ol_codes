@@ -40,7 +40,7 @@ Append these settings into your workspace settings.
     "code-runner.saveFileBeforeRun": true,
     "code-runner.customCommand": "python $workspaceRoot/commands/runner.py $fileName $workspaceRoot/library",
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ -I$workspaceRoot/library -std=c++17 -O2 -Wall -o bin/$fileNameWithoutExt $fileName && ./bin/$fileNameWithoutExt"
+        "cpp": "cd $dir && g++ -I$workspaceRoot/library -std=c++17 -O2 -Wall -D LOCAL -o bin/$fileNameWithoutExt $fileName && ./bin/$fileNameWithoutExt"
     }
 }
 ```

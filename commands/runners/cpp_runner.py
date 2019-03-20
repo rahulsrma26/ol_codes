@@ -14,7 +14,7 @@ class CppRunner(BaseRunner):
         if os.path.isfile(self.dst_path):
             os.remove(self.dst_path)
 
-        self.shell(f'g++ -I{self.lib_path} -std=c++17 -O2 -Wall -o {self.dst_path} {self.src_path}')
+        self.shell(f'g++ -I{self.lib_path} -std=c++17 -O2 -Wall -D LOCAL -o {self.dst_path} {self.src_path}')
 
         return os.path.isfile(self.dst_path)
 
