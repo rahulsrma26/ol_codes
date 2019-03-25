@@ -2,7 +2,9 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/268/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <unordered_map>
 
 int main() {
     using namespace std;

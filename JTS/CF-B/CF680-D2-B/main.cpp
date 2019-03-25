@@ -2,7 +2,8 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/680/problem/B
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 int main() {
     using namespace std;

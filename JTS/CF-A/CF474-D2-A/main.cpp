@@ -2,7 +2,9 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/474/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
 
 int main() {
     using namespace std;
@@ -15,17 +17,17 @@ int main() {
     string d;
     getline(cin, d);
 
-    int o = d[0] == 'L' ? 0: 1, p = 1 - 2*o;
+    int o = d[0] == 'L' ? 0 : 1, p = 1 - 2 * o;
     char map[128];
-    for(const auto& r: k)
-        for(int i=o; i<r.size() - 1 + o; i++)
-            //cout << r[i] << "=" << r[i+p] << '\n';
-            map[(int)r[i]] = r[i+p];
+    for (const auto& r : k)
+        for (size_t i = o; i < r.size() - 1 + o; i++)
+            // cout << r[i] << "=" << r[i+p] << '\n';
+            map[(int)r[i]] = r[i + p];
 
     string s;
     getline(cin, s);
 
-    for(auto& c: s)
+    for (auto& c : s)
         c = map[(int)c];
     cout << s;
 }

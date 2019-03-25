@@ -2,7 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : <<<src_url>>>
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 int main() {
     using namespace std;

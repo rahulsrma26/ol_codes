@@ -2,7 +2,9 @@
 //  Author : Rahul Sharma
 // Problem : https://www.spoj.com/problems/EASYMATH/
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using num = long long;
 using unum = unsigned long long;

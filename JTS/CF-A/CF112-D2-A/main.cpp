@@ -2,7 +2,8 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/112/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 
 int main() {
     using namespace std;
@@ -13,7 +14,7 @@ int main() {
     string s1, s2;
     cin >> s1 >> s2;
 
-    for (int i = 0; i < s1.length(); i++) {
+    for (size_t i = 0; i < s1.length(); i++) {
         if (tolower(s1[i]) < tolower(s2[i])) {
             cout << -1 << '\n';
             return 0;

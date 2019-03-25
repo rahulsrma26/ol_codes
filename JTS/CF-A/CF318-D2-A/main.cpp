@@ -2,7 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/318/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 using ll=long long;
 

@@ -2,7 +2,8 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/216/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 
 struct vertex {
     int l, r;

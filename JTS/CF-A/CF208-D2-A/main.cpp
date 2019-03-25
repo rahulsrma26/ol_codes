@@ -2,7 +2,9 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/208/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <regex>
 
 int main() {
     using namespace std;

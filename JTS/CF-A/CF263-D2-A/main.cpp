@@ -2,7 +2,8 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/263/problem/A
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cmath>
 
 int main() {
     using namespace std;

@@ -2,7 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/287/problem/B
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 using num = long long;
 
