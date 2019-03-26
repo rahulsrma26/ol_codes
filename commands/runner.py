@@ -48,12 +48,12 @@ def main():
                 status = 'PASSED'
             print(test, status)
             if status != 'PASSED':
-                print('-' * line_length)
+                print('-' * line_length, '[input]')
                 print(in_text)
-                print('-' * line_length)
+                print('-' * line_length, '[output]')
                 print(out_text)
                 if status != 'RUN':
-                    print('-' * line_length)
+                    print('-' * line_length, '[answer]')
                     print(gt_text)
         print('=' * line_length)
 
