@@ -9,7 +9,7 @@ class BaseFetcher(ABC):
 
         response = requests.get(url)
         if response.status_code != 200:
-            raise ValueError(f'response.status_code = {response.status_code}')
+            print(f'response.status_code = {response.status_code}')
         self.text = response.text
 
 

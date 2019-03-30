@@ -1,6 +1,7 @@
 from urllib.parse import urlsplit
-from .code_force import CodeForce
-from .spoj import SPOJ
+from .cf_fetcher import CodeForceFetcher
+from .spoj_fetcher import SPOJFetcher
+from .cc_fetcher import CodeChefFetcher
 
 
 class FetcherFactory:
@@ -12,9 +13,12 @@ class FetcherFactory:
 
     def get(self, url):
         key = urlsplit(url).netloc
+        if key not in self._fetchers:
+            raise ValueError(f'key "{key}" not found')
         return self._fetchers.get(key)(url)
 
 
 factory = FetcherFactory()
-factory.register('codeforces.com', CodeForce)
-factory.register('www.spoj.com', SPOJ)
+factory.register('codeforces.com', CodeForceFetcher)
+factory.register('www.spoj.com', SPOJFetcher)
+factory.register('www.codechef.com', CodeChefFetcher)

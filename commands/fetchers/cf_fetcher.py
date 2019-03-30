@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from .base_fetcher import BaseFetcher
 
 
-class CodeForce(BaseFetcher):
+class CodeForceFetcher(BaseFetcher):
 
     def dirname(self):
         comps = urlsplit(self.url).path.split('/')
