@@ -43,11 +43,17 @@ Append these settings into your workspace settings.
         "cpp": "cd $dir && g++ -I$workspaceRoot/library -std=c++17 -O2 -Wall -D LOCAL -o bin/$fileNameWithoutExt $fileName && ./bin/$fileNameWithoutExt"
     }
 }
+
+You can replace 'library' with 'shol/include' if you want to use [shol])(https://github.com/rahulsrma26/shol).
+To use shol make sure you have used '--recursive'
+```sh
+git clone --recursive <URL to this Git repo>
+```
+
 ```
 Now to run a file just open it and press
 <kbd>control</kbd>+<kbd>option</kbd>+<kbd>k</kbd> (on mac)
 or <kbd>control</kbd>+<kbd>alt</kbd>+<kbd>k</kbd> (on pc).
-
 ---
 
 Using code fetcher script
