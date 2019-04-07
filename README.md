@@ -54,6 +54,7 @@ git clone --recursive <URL to this Git repo>
 Now to run a file just open it and press
 <kbd>control</kbd>+<kbd>option</kbd>+<kbd>k</kbd> (on mac)
 or <kbd>control</kbd>+<kbd>alt</kbd>+<kbd>k</kbd> (on pc).
+
 ---
 
 Using code fetcher script
