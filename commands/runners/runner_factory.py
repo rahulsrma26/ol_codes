@@ -1,6 +1,7 @@
 import os
 from .cpp_runner import CppRunner
 from .java_runner import JavaRunner
+from .py_runner import PythonRunner
 
 
 class RunnerFactory:
@@ -18,3 +19,4 @@ class RunnerFactory:
 factory = RunnerFactory()
 factory.register('.cpp', CppRunner)
 factory.register('.java', JavaRunner)
+factory.register('.py', PythonRunner)
