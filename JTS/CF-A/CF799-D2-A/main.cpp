@@ -3,6 +3,7 @@
 // Problem : http://codeforces.com/contest/799/problem/A
 
 #include <iostream>
+#include <string>
 
 int main() {
     using namespace std;
@@ -16,22 +17,17 @@ int main() {
     int r = [&]() {
         // total cycles
         int c = (n + k - 1) / k;
-        // cout << "c " << c << ", ";
         // remaining time after building he first
-        int b = (d + t - 1) / t;
-        // cout << "b " << b << ", ";
+        int b = (d + t - 1) / t; // floor(d/t)
         if (b * k >= n)
             return 0;
         int rc = c - b;
-        // cout << "rc " << rc << ", ";
         int o1 = d + t*(((rc+1)/2 + k - 1)/k);
-        // cout << "o1 " << o1 << ", ";
         int o2 = b*t + + t*((rc/2 + k - 1)/k);
-        // cout << "o2 " << o2 << ", ";
 
         return max(o1, o2) < c*t ? 1 : 0;
     }();
 
-    const char* msg[] = {"NO", "YES"};
+    const string msg[] = {"NO", "YES"};
     cout << msg[r] << '\n';
 }
