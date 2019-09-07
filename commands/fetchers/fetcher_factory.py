@@ -2,6 +2,7 @@ from urllib.parse import urlsplit
 from .cf_fetcher import CodeForceFetcher
 from .spoj_fetcher import SPOJFetcher
 from .cc_fetcher import CodeChefFetcher
+from .lc_fetcher import LeetCodeFetcher
 
 
 class FetcherFactory:
@@ -22,3 +23,4 @@ factory = FetcherFactory()
 factory.register('codeforces.com', CodeForceFetcher)
 factory.register('www.spoj.com', SPOJFetcher)
 factory.register('www.codechef.com', CodeChefFetcher)
+factory.register('leetcode.com', LeetCodeFetcher)
