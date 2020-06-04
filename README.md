@@ -7,7 +7,7 @@ Fresh initiation on online coding. Code-gems was getting too big also moving to 
 
 Using Visual Studio Code
 ========================
-Project intented to work well with [visual studio code](https://code.visualstudio.com/). It's free, open source and available in all major platforms.
+Project intented to work well with [visual studio code](https://code.visualstudio.com/) and [code-faster](https://pypi.org/project/code-faster/). It's free, open source and available in all major platforms.
 
 Extentions:
 
@@ -38,14 +38,13 @@ Append these settings into your workspace settings.
     "code-runner.fileDirectoryAsCwd": true,
     "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true,
-    "code-runner.customCommand": "python $workspaceRoot/commands/runner.py $fileName $workspaceRoot/library",
+    "code-runner.customCommand": "crun $fileName -std=c++17 -Wall",
     "code-runner.executorMap": {
         "cpp": "cd $dir && g++ -I$workspaceRoot/library -std=c++17 -O2 -Wall -D LOCAL -o bin/$fileNameWithoutExt $fileName && ./bin/$fileNameWithoutExt"
     }
 }
 ```
 
-You can replace 'library' with 'shol/include' if you want to use [shol](https://github.com/rahulsrma26/shol).
 To use shol make sure you have used '--recursive' flag.
 ```sh
 git clone --recursive <URL to this Git repo>
@@ -57,10 +56,9 @@ or <kbd>control</kbd>+<kbd>alt</kbd>+<kbd>k</kbd> (on pc).
 
 ---
 
-Using code fetcher script
+Using code fetcher command
 -------------------------
 Run
 ```sh
-    cd JTS
-    python ../commands/fetcher.py <problem-url> <code-template>
+    cfetch <problem-url> <code-template>
 ```
