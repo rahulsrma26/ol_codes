@@ -3,7 +3,7 @@
 using namespace std;
 
 void fun(vector<int>& ary) {
-    const auto n = ary.size();
+    const int n = ary.size();
     if (n == 1) {
         cout << ary[0] << '\n';
         return;
