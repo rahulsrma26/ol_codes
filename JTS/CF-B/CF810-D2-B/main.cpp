@@ -15,15 +15,17 @@ int main() {
     int n, f;
     cin >> n >> f;
 
-    vector<int> a(n);
+    vector<int> extra(n);
     uint64_t s = 0;
-    for (int i = 0, k, l; i < n;
-         a[i++] = max(0, min(2 * k, l) - min(k, l)), s += min(k, l))
+    for (int i = 0, k, l; i < n; i++){
         cin >> k >> l;
+        const int sell = min(k, l);
+        extra[i] = max(0, min(2 * k, l) - sell);
+        s += sell;
+    }
 
-    sort(a.begin(), a.end(), greater<>());
+    nth_element(extra.begin(), extra.begin() + f, extra.end(), greater<>());
     for (int i = 0; i < f; i++)
-        s += a[i];
-
+        s += extra[i];
     cout << s;
 }

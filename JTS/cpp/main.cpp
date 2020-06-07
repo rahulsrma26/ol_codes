@@ -3,13 +3,7 @@
 // Problem : <<<title>>>
 //     Url : <<<src_url>>>
 
-#include <iostream>
-#include <algorithm>
-#include <numeric>
-#include <vector>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
+#include <bits/stdc++.h>
 using namespace std;
 
 #define input(t, v) t v; cin >> v
