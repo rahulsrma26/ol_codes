@@ -32,8 +32,8 @@ int main() {
         int t = dx == 0 ? sy : (dy == 0 ? sx : min(sy, sx));
         int y1 = y + t * dy, x1 = x + t * dx;
         // cout << sy << ',' << sx << '|' << y1 << ',' << x1 << '\n';
-        if (0 < y1 && y1 <= n && 0 < x1 && x1 <= m)
-            s += t, y = y1, x = x1;
+        // if (0 < y1 && y1 <= n && 0 < x1 && x1 <= m)
+        s += t, y = y1, x = x1;
     }
 
     cout << s << '\n';

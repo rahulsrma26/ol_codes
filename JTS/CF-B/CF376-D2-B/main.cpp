@@ -2,8 +2,7 @@
 //  Author : Rahul Sharma
 // Problem : http://codeforces.com/contest/376/problem/B
 
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 int main() {
     using namespace std;
@@ -19,8 +18,7 @@ int main() {
         d[b - 1] -= c;
     }
 
-    int t = 0;
-    for (auto x : d)
-        t += x > 0 ? x: 0;
-    cout << t << '\n';
+    cout << accumulate(d.begin(), d.end(), 0, [](auto a, auto b){
+        return b > 0 ? a + b : a;
+    }) << '\n';
 }

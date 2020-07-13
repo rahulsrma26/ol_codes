@@ -15,18 +15,42 @@ int main() {
     int n;
     cin >> n;
 
-    vector<int> a;
-    for (int i = 0, x; i < n; i++) {
+    int a = -1, b = -1, c = -1, i = 1;
+    cin >> a;
+    for (int x; i < n; i++) {
         cin >> x;
-        if (find(a.begin(), a.end(), x) == a.end())
-            a.push_back(x);
-        if (a.size() > 3)
+        if(x != a){
+            b = x;
+            i++;
             break;
+        }
     }
-    sort(a.begin(), a.end());
+    for (int x; i < n; i++) {
+        cin >> x;
+        if(x != a && x != b){
+            c = x;
+            i++;
+            break;
+        }
+    }
+    bool possible = true;
+    for (int x; i < n; i++) {
+        cin >> x;
+        if(x != a && x != b && x != c){
+            possible = false;
+            break;
+        }
+    }
+    if(possible && c != -1){
+        if(a > b)
+            swap(a, b);
+        if(b > c)
+            swap(b, c);
+        if(a > b)
+            swap(a, b);
+        if(c - b != b - a)
+            possible = false;
+    }
 
-    cout << (a.size() > 3 || (a.size() == 3 && a[1] - a[0] != a[2] - a[1])
-                 ? "NO"
-                 : "YES")
-         << '\n';
+    cout << (possible ? "YES" : "NO") << '\n';
 }
