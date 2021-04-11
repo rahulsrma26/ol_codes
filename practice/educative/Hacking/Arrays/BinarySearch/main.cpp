@@ -1,31 +1,56 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int binarySearchBF(const vector<int>& ary, const int x){
     auto result = find(ary.begin(), ary.end(), x);
     return result != ary.end() ? result - ary.begin() : -1;
 }
 
 int binarySearch(const vector<int>& ary, const int x){
-    if(ary.empty())
-        return -1;
-
     int l = 0, r = ary.size() - 1;
     while(l <= r){
         const int m = l + (r - l) / 2;
-        // if(ary[m] == x){
-        //     while(m > 0 && ary[m - 1] == x)
-        //         m--;
-        //     return m;
-        // }
-        if(x < ary[m])
+        if(x <= ary[m])
             r = m - 1;
         else
             l = m + 1;
     }
-    return ary[l] == x ? l : -1;
+    return (l < ary.size() && ary[l] == x)? l: -1;
 }
+
+// Lower Bound
+// int binarySearchBF(const vector<int>& ary, const int x){
+//     return lower_bound(ary.begin(), ary.end(), x) - ary.begin();
+// }
+
+// int binarySearch(const vector<int>& ary, const int x){
+//     int l = 0, r = ary.size() - 1;
+//     while(l <= r){
+//         const int m = l + (r - l) / 2;
+//         if(x <= ary[m])
+//             r = m - 1;
+//         else
+//             l = m + 1;
+//     }
+//     return l;
+// }
+
+// Upper Bound
+// int binarySearchBF(const vector<int>& ary, const int x){
+//     return upper_bound(ary.begin(), ary.end(), x) - ary.begin();
+// }
+
+// int binarySearch(const vector<int>& ary, const int x){
+//     int l = 0, r = ary.size() - 1;
+//     while(l <= r){
+//         const int m = l + (r - l) / 2;
+//         if(x < ary[m])
+//             r = m - 1;
+//         else
+//             l = m + 1;
+//     }
+//     return l;
+// }
 
 class Tester{
     mt19937 rng_m;
@@ -80,13 +105,11 @@ class Tester{
 int main(){
     ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-    // vector<int> a = {-4, 2, -5, 3, 6};
-    // for(int x: binarySearch(a, 3))
-    //     cout << x << ',';
-    // cout << endl;
+    // vector<int> a = {1, 2, 2, 2, 2, 3};
+    // cout << binarySearch(a, 2) << endl;
     // for(int x: binarySearchBF({-8}, 1))
     //     cout << x << ',';
     // cout << endl;
 
-    Tester().test(4, 7);
+    Tester().test(5, 7);
 }
